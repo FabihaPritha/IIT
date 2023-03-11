@@ -1,0 +1,46 @@
+class Car{
+ int speed;
+ double regularPrice;
+ String color;
+ Car(int speed,double regularPrice,String color){
+ this.speed=speed;
+ this.regularPrice=regularPrice;
+ this.color=color;
+ }
+ public double getSalePrice()
+ {
+ return regularPrice;
+ }
+}
+class Truck extends Car{
+ int weigth;
+ Truck(int speed,double regularPrice,String color,int weigth){
+ super(speed, regularPrice, color);
+ this.weigth=weigth;
+ }
+ public double getSalePrice(){
+ return regularPrice;
+ }
+}
+class Sedan extends Car{
+ int length;
+ Sedan(int speed,double regularPrice,String color,int length){
+ super(speed, regularPrice, color);
+ this.length=length;
+ }
+ public double getSalePrice(){
+ return regularPrice;
+ }
+}
+public class MyOwnAutoShop {
+ public static void main(String[] args) {
+ Truck t1=new Truck(100, 100000, "Black", 1000);
+ Sedan s1=new Sedan(180, 1000000, "Blue", 30);
+ Sedan s2=new Sedan(180, 1000000, "Gold", 30);
+ Car c1=new Car(100, 111101, "White");
+ System.out.println("Truck price: "+t1.getSalePrice());
+ System.out.println("Sedan 1 price: "+s1.getSalePrice());
+ System.out.println("Sedan 2 price: "+s2.getSalePrice());
+ System.out.println("Car price: "+c1.getSalePrice());
+ }
+}
